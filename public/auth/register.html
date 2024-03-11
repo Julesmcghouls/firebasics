@@ -11,19 +11,20 @@
     <form id="MainForm" class="w-25 m-4">
       <div class="form-floating mb-3">
         <h2 class="mb-3">Register User: </h2>
+        
         <input type="email" class="form-control" id="emailInput" placeholder="name@example.com">
         <label for="floatingInput">Email address: </label>
       </div>
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="passwordInput" placeholder="Password">
+        <input type="password" class="form-control" id="passwordInput">
         <label for="floatingPassword">Password: </label>
       </div>
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="fnameInput" placeholder="text">
+        <input type="text" class="form-control" id="fnameInput">
         <label for="floatingInput">First Name: </label>
       </div>
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="lnameInput" placeholder="text">
+        <input type="password" class="form-control" id="lnameInput">
         <label for="floatingPassword">Last Name: </label>
       </div>
 
@@ -66,7 +67,6 @@
           // Signed in 
           const user = userCredential.user;
           console.log(user);
-          // ...
         })
         .catch((error) => {
           const errorCode = error.code;
