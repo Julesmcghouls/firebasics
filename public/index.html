@@ -34,8 +34,9 @@
     <input type="number" id="CNICinp">
     <br><br>
 
+    <!-- Buttons -->
     <button id="AddBtn">Add</button>
-    <button id="GetBtn">Get</button>
+    <button id="RetBtn">Retrieve</button>
     <button id="UpBtn">Update</button>
     <button id="DBtn">Delete</button>
 
@@ -67,7 +68,7 @@
         let cnic = document.getElementById('CNICinp');
 
         let AddBtn = document.getElementById('AddBtn');
-        let GetBtn = document.getElementById('GetBtn');
+        let RetBtn = document.getElementById('RetBtn');
         let UpBtn = document.getElementById('UpBtn');
         let DBtn = document.getElementById('DBtn');
 
@@ -85,7 +86,7 @@
             });
         }
 
-        function getData() {
+        function retData() {
             const dbRef = ref(db);
 
             get(child(dbRef, 'EmployeeSet')).then((snapshot) => {
@@ -125,10 +126,10 @@
         }
 
         AddBtn.addEventListener('click', addData);
-        GetBtn.addEventListener('click', getData);
+        RetBtn.addEventListener('click', retData);
         UpBtn.addEventListener('click', updateData);
         DBtn.addEventListener('click', deleteData);
-        
+
       </script>
 
 </body>
