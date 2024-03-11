@@ -19,11 +19,11 @@
         <label for="floatingPassword">Password: </label>
       </div>
       <div class="form-floating mb-3">
-        <input type="email" class="form-control" id="fnameInput" placeholder="name@example.com">
+        <input type="email" class="form-control" id="fnameInput" placeholder="text">
         <label for="floatingInput">First Name: </label>
       </div>
       <div class="form-floating mb-3">
-        <input type="password" class="form-control" id="lnameInput" placeholder="Password">
+        <input type="password" class="form-control" id="lnameInput" placeholder="text">
         <label for="floatingPassword">Last Name: </label>
       </div>
 
@@ -36,7 +36,7 @@
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
       import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
-      import { getAuth, createUserWithEmailandPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+      import { getAuth, createUserWithEmailandPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-auth.js";
 
 
       const firebaseConfig = {
@@ -75,6 +75,7 @@
           // ..
         });
       }
+      MainForm.addEventListener('submit', createUser);
 
     </script>
 
