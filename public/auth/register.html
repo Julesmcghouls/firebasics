@@ -34,6 +34,10 @@
     
     <script type="module">
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+      import { getDatabase, set, ref } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+      import { getAuth, createUserWithEmailandPassword } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+
+
       const firebaseConfig = {
         apiKey: "AIzaSyDYu5E9Cf7ByGr5Fgx9-7I64C4u1lUbRS4",
         authDomain: "fir-v10-5cd0b.firebaseapp.com",
@@ -45,6 +49,32 @@
       };
     
       const app = initializeApp(firebaseConfig);
+      const db = getDatabase();
+      const auth = getAuth(app);
+
+      let email = document.getElementById('emailInput');
+      let password = document.getElementById('passwordInput');
+      let fname = document.getElementById('fnameInput');
+      let lname = document.getElementById('lnameInput');
+      let form = document.getElementById('MainForm');
+
+      let createUser = (e) => {
+        e.preventDefault();
+        createUserWithEmailandPassword(auth, email.value, password.value)
+        .then((userCredential) => {
+          // Signed in 
+          const user = userCredential.user;
+          console.log(user);
+          // ...
+        })
+        .catch((error) => {
+          const errorCode = error.code;
+          const errorMessage = error.message;
+          console.log(errorCode, errorMessage);
+          // ..
+        });
+      }
+
     </script>
 
 
